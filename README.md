@@ -1,11 +1,11 @@
-# file-size-utils
+# @ajayyadav08/file-size-utils
 
 A zero-dependency JavaScript utility toolkit for formatting, parsing, converting, and comparing byte sizes.
 
 ## Installation
 
 ```bash
-npm install file-size-utils
+npm install @ajayyadav08/file-size-utils
 ```
 
 ## Quick Start
@@ -18,7 +18,7 @@ import {
   getSizeInfo,
   compareSizes,
   isValidSize
-} from 'file-size-utils';
+} from '@ajayyadav08/file-size-utils';
 ```
 
 ## Core Methods

@@ -1,5 +1,5 @@
 {
-  "name": "file-size-utils",
+  "name": "@ajayyadav08/file-size-utils",
   "version": "1.0.0",
   "description": "Utility suite to format, parse, validate, and convert file sizes in JavaScript.",
   "type": "module",
@@ -7,6 +7,9 @@
   "files": [
     "src"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "exports": {
     ".": "./src/index.js"
   },
