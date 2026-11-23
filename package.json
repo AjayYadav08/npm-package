@@ -1,0 +1,25 @@
+{
+  "name": "file-size-utils",
+  "version": "1.0.0",
+  "description": "Utility suite to format, parse, validate, and convert file sizes in JavaScript.",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.js"
+  },
+  "keywords": [
+    "file-size",
+    "bytes",
+    "format",
+    "converter",
+    "parser"
+  ],
+  "author": "Ajay Yadav <yadavajay003232@gmail.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
