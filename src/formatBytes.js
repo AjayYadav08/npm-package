@@ -10,22 +10,21 @@ export function formatBytes(bytes, options = {}) {
     throw new RangeError('Decimals option must be a non-negative integer');
   }
 
-  const base = binary ? 1024 : 1024;
-  const unitList = binary ? BINARY_UNITS : METRIC_UNITS;
+  const units = binary ? BINARY_UNITS : METRIC_UNITS;
 
   if (bytes === 0) {
-    return `0 ${unitList[0]}`;
+    return `0 ${units[0]}`;
   }
 
-  const exponent = Math.min(
-    Math.floor(Math.log(bytes) / Math.log(base)),
-    unitList.length - 1
+  const i = Math.min(
+    Math.floor(Math.log(bytes) / Math.log(1024)),
+    units.length - 1
   );
 
-  const rawValue = bytes / Math.pow(base, exponent);
-  const formattedNumber = options.decimals !== undefined
-    ? rawValue.toFixed(decimals)
-    : String(parseFloat(rawValue.toFixed(2)));
+  const value = bytes / Math.pow(1024, i);
+  const formatted = options.decimals !== undefined
+    ? value.toFixed(decimals)
+    : String(parseFloat(value.toFixed(2)));
 
-  return `${formattedNumber} ${unitList[exponent]}`;
+  return `${formatted} ${units[i]}`;
 }

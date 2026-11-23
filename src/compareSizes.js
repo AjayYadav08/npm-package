@@ -1,6 +1,6 @@
 import { parseBytes } from './parseBytes.js';
 
-function normalizeToBytes(val, label) {
+function toBytes(val, label) {
   if (typeof val === 'number') {
     if (Number.isNaN(val) || !Number.isFinite(val) || val < 0) {
       throw new TypeError(`Expected ${label} to be a finite non-negative number or valid size string`);
@@ -14,8 +14,8 @@ function normalizeToBytes(val, label) {
 }
 
 export function compareSizes(a, b) {
-  const first = normalizeToBytes(a, 'first');
-  const second = normalizeToBytes(b, 'second');
+  const first = toBytes(a, 'first');
+  const second = toBytes(b, 'second');
   const difference = Math.abs(first - second);
 
   let larger = 'equal';

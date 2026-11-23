@@ -14,14 +14,14 @@ export function getSizeInfo(bytes) {
     };
   }
 
-  const exponent = Math.min(
+  const i = Math.min(
     Math.floor(Math.log(bytes) / Math.log(1024)),
     METRIC_UNITS.length - 1
   );
 
-  const rawValue = bytes / Math.pow(1024, exponent);
-  const value = parseFloat(rawValue.toFixed(2));
-  const unit = METRIC_UNITS[exponent];
+  const raw = bytes / Math.pow(1024, i);
+  const value = parseFloat(raw.toFixed(2));
+  const unit = METRIC_UNITS[i];
 
   return {
     bytes,
